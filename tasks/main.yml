@@ -1,4 +1,6 @@
 ---
+- import_tasks: preflight.yml
+
 - import_tasks: install.yml
   become: true
 
