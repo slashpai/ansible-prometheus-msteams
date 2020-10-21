@@ -1,5 +1,6 @@
-
-![ansible lint](https://github.com/slashpai/ansible-prometheus-msteams/workflows/ansible%20lint/badge.svg)
+<p align="left">
+  <a href="https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Aansible-lint"><img alt="ansible-lint status" src="https://github.com/slashpai/ansible-prometheus-msteams/workflows/ansible%20lint/badge.svg"></a>
+</p>
 
 ansible-prometheus-msteams
 =========
