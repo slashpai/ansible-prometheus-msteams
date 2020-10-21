@@ -1,0 +1,36 @@
+{{ ansible_managed | comment }}
+
+[Unit]
+Description=Prometheus MSTeams
+After=network-online.target
+
+[Service]
+Type=simple
+User={{ _prometheus_msteams_system_user }}
+Group={{ _prometheus_msteams_system_group }}
+ExecStart={{ _prometheus_msteams_binary_install_dir }}/prometheus_msteams \
+-teams-request-uri alertmanager -config-file "{{ prometheus_msteams_config_dir }}/config.yaml" -template-file "{{ prometheus_msteams_config_dir }}/default-message-card.tmpl"
+
+SyslogIdentifier=prometheus-msteams
+Restart=always
+RestartSec=5
+StartLimitInterval=0
+
+{% for m in ansible_mounts if m.mount == '/home' %}
+ProtectHome=read-only
+{% else %}
+ProtectHome=yes
+{% endfor %}
+NoNewPrivileges=yes
+
+{% if prometheus_msteams_systemd_version | int >= 232 %}
+ProtectSystem=strict
+ProtectControlGroups=true
+ProtectKernelModules=true
+ProtectKernelTunables=yes
+{% else %}
+ProtectSystem=full
+{% endif %}
+
+[Install]
+WantedBy=multi-user.target
