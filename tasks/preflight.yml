@@ -29,3 +29,10 @@
         - "('prometheus-msteams-linux-amd64') in item"
   delegate_to: localhost
   when: prometheus_msteams_binary_local_dir | length == 0
+
+- name: Fail when prometheus_msteams_channels not defined
+  fail:
+    msg: >
+      prometheus_msteams_channels not defined
+  when:
+    - prometheus_msteams_channels == []

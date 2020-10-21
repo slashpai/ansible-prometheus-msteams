@@ -9,4 +9,8 @@ prometheus_msteams_config_dir: "/etc/prometheus_msteams"
 
 prometheus_msteams_web_listen_address: "0.0.0.0:2000"
 
-prometheus_msteams_webhook : "https://outlook.office.com/webhook/xxx"
+prometheus_msteams_channels: []
+
+# prometheus_msteams_channels:
+# - channel1: "https://outlook.office.com/webhook/xxx/aaa/abc"
+# - channel2: "https://outlook.office.com/webhook/xxx/bbb/def"

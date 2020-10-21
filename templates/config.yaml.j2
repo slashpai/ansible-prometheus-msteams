@@ -1,4 +1,4 @@
 ---
 {{ ansible_managed | comment }}
 connectors:
-- channel: {{ prometheus_msteams_webhook }}
+  {{ prometheus_msteams_channels| to_nice_yaml(indent=2) | indent(2,False) }}
