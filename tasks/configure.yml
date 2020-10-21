@@ -49,3 +49,12 @@
     owner: root
     group: root
   when: prometheus_msteams_binary_local_dir | length > 0
+
+- name: Copy the prometheus_msteams systemd service file
+  template:
+    src: prometheus_msteams.service.j2
+    dest: /etc/systemd/system/prometheus_msteams.service
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart prometheus_msteams
