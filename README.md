@@ -20,17 +20,17 @@ All variables in [default/main.yml](defaults/main.yml) can be overrided
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `prometheus_msteams_version`| 1.4.1| prometheus-msteams version to install|
-| `prometheus_msteams_binary_local_dir`| ""| To allow to use local packages from controller machine instead of github packages|
+|`prometheus_msteams_version`| 1.4.1| prometheus-msteams version to install|
+|`prometheus_msteams_binary_local_dir`| ""| To allow to use local packages from controller machine instead of github packages|
 |`prometheus_msteams_template_local_dir`| ""| To allow to use local teams card template on controller machine than from github|
-|`prometheus_msteams_config_dir`| "/etc/prometheus_msteams"| Location to store configs |
+|`prometheus_msteams_config_dir`| "/etc/prometheus_msteams"| Location to store server configs |
 |`prometheus_msteams_web_listen_address`| "0.0.0.0:2000"| prometheus_msteams listen addrress|
 |`prometheus_msteams_request_uri`| "alertmanager" | teams-request-uri |
 |`prometheus_msteams_channels`| [] | Channels to which alerts to send from alert manager|
 
 ## Dependencies
 
-**Nil**
+Nil
 
 ## Example Playbook
 
@@ -60,4 +60,4 @@ Example [playbook](https://github.com/slashpai/msteams_ansible)
 
 ## License
 
-[MIT](LICENCE)
+[MIT](LICENSE)
