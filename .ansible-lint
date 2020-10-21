@@ -1,0 +1,7 @@
+exclude_paths:
+  .github/
+  meta/
+skip_list:
+  - '106'
+  - '204'
+use_default_rules: true

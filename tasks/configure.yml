@@ -30,7 +30,7 @@
       delay: 2
       delegate_to: localhost
       check_mode: false
- 
+
     - name: Propagate prometheus_msteams template card
       copy:
         src: "/tmp/default-message-card.tmpl"
@@ -40,7 +40,7 @@
         group: root
       when: not ansible_check_mode
   when: prometheus_msteams_template_local_dir | length == 0
-  
+
 - name: propagate locally distributed prometheus_msteams template card
   copy:
     src: "{{ prometheus_msteams_template_local_dir }}/default-message-card.tmpl"

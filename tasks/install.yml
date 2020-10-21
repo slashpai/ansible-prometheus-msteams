@@ -41,7 +41,7 @@
         group: root
       when: not ansible_check_mode
   when: prometheus_msteams_binary_local_dir | length == 0
-  
+
 - name: propagate locally distributed prometheus_msteams binary
   copy:
     src: "{{ prometheus_msteams_binary_local_dir }}/prometheus_msteams"
