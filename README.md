@@ -1,19 +1,20 @@
-<p align="left">
-  <a href="https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Aansible-lint"><img alt="ansible-lint status" src="https://github.com/slashpai/ansible-prometheus-msteams/workflows/ansible%20lint/badge.svg"></a>
-</p>
+# Ansible role prometheus-msteams
 
-ansible-prometheus-msteams
-=========
+[![ansible lint](https://github.com/slashpai/ansible-prometheus-msteams/workflows/ansible%20lint/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Aansible-lint)
 
-To install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams).
+## ansible-prometheus-msteams
 
-Requirements
-------------
+To install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) for sending notifications from [alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) to [microsoft teams](https://www.microsoft.com/en-in/microsoft-365/microsoft-teams/group-chat-software)
 
-* Ansible >= 2.9
+## Synopsis
 
-Role Variables
---------------
+This role was created to install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) when I figured out there is no direct way we can use [microsoft teams](https://www.microsoft.com/en-in/microsoft-365/microsoft-teams/group-chat-software) as receiver in [alertmanager config](https://prometheus.io/docs/alerting/latest/configuration/). I didn't find any existing ansible role for this thats how this role was created. This role is created inspired by [ansible-node-exporter](https://github.com/cloudalchemy/ansible-node-exporter)
+
+## Requirements
+
+* Ansible >= 2.9 (Earlier versions may work, but I haven't tested)
+
+## Role Variables
 
 All variables in [default/main.yml](defaults/main.yml) can be overrided
 
@@ -27,18 +28,16 @@ All variables in [default/main.yml](defaults/main.yml) can be overrided
 |`prometheus_msteams_request_uri`| "alertmanager" | teams-request-uri |
 |`prometheus_msteams_channels`| [] | Channels to which alerts to send from alert manager|
 
-Dependencies
-------------
+## Dependencies
 
-Nil
+**Nil**
 
-Example Playbook
-----------------
+## Example Playbook
 
 This role is not released in galaxy yet to utilze this role, you can add this repo as a git submodule
 
 ```bash
-git submodule add git@github.com:slashpai/ansible-prometheus-msteams.git roles/prometheus-msteams
+git submodule add -b main https://github.com/slashpai/ansible-prometheus-msteams.git roles/prometheus-msteams
 ```
 
 ```yaml
@@ -53,7 +52,12 @@ To get role updates
 git submodule update --remote
 ```
 
-License
--------
+Example [playbook](https://github.com/slashpai/msteams_ansible)
 
-MIT
+## Contributing
+
+**TODO:** To be updated
+
+## License
+
+[MIT](LICENCE)
