@@ -9,7 +9,7 @@ Type=simple
 User={{ _prometheus_msteams_system_user }}
 Group={{ _prometheus_msteams_system_group }}
 ExecStart={{ _prometheus_msteams_binary_install_dir }}/prometheus_msteams \
--teams-request-uri alertmanager -config-file "{{ prometheus_msteams_config_dir }}/config.yaml" -template-file "{{ prometheus_msteams_config_dir }}/default-message-card.tmpl"
+-teams-request-uri {{ prometheus_msteams_request_uri }} -config-file "{{ prometheus_msteams_config_dir }}/config.yaml" -template-file "{{ prometheus_msteams_config_dir }}/default-message-card.tmpl"
 
 SyslogIdentifier=prometheus-msteams
 Restart=always

@@ -9,6 +9,8 @@ prometheus_msteams_config_dir: "/etc/prometheus_msteams"
 
 prometheus_msteams_web_listen_address: "0.0.0.0:2000"
 
+prometheus_msteams_request_uri: "alertmanager"
+
 prometheus_msteams_channels: []
 
 # prometheus_msteams_channels:
