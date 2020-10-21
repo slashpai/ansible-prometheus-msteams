@@ -1,4 +1,7 @@
-Role Name
+
+![ansible lint](https://github.com/slashpai/ansible-prometheus-msteams/workflows/ansible%20lint/badge.svg)
+
+ansible-prometheus-msteams
 =========
 
 To install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams).
