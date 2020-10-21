@@ -1,0 +1,3 @@
+_prometheus_msteams_binary_install_dir: "/usr/local/bin"
+_prometheus_msteams_system_group: "prometheus_msteams"
+_prometheus_msteams_system_user: "{{ _prometheus_msteams_system_group }}"

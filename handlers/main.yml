@@ -1,0 +1,4 @@
+---
+- name: restart prometheus_msteams
+  become: true
+  shell: /usr/local/bin/prometheus_msteams -teams-request-uri alertmanager -config-file "{{ prometheus_msteams_config_dir }}/config.yaml" -template-file "{{ prometheus_msteams_config_dir }}/default-message-card.tmpl"

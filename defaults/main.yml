@@ -1,0 +1,11 @@
+---
+prometheus_msteams_version: 1.4.1
+prometheus_msteams_binary_local_dir: ""
+prometheus_msteams_template_local_dir: ""
+prometheus_msteams_config_dir: "/etc/prometheus_msteams"
+prometheus_msteams_web_listen_address: "0.0.0.0:2000"
+
+prometheus_msteams_webhook : "https://outlook.office.com/webhook/xxx"
+
+# change this logic later to directly get checksum from github
+prometheus_msteams_checksum: "c48f8e6664ed41b5c0967421116b2b4bbc0515efa8a00eefe0f27ae95d9f900a"

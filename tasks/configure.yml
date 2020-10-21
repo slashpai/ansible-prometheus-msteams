@@ -1,0 +1,51 @@
+---
+- block:
+    - name: Create prometheus_msteams config directory
+      file:
+        path: "/etc/prometheus_msteams"
+        state: directory
+        owner: root
+        group: root
+        mode: u+rwX,g+rwX,o=rX
+
+    - name: Copy the prometheus_msteams config file
+      template:
+        src: config.yaml.j2
+        dest: "{{ prometheus_msteams_config_dir }}/config.yaml"
+        owner: root
+        group: root
+        mode: 0644
+      notify: restart prometheus_msteams
+
+- block:
+    - name: Download prometheus_msteams template card to local folder
+      become: false
+      get_url:
+        url: "https://github.com/prometheus-msteams/prometheus-msteams/releases/download/v{{ prometheus_msteams_version }}/default-message-card.tmpl"
+        dest: "/tmp/default-message-card.tmpl"
+        mode: '0644'
+      register: _download_template
+      until: _download_template is succeeded
+      retries: 5
+      delay: 2
+      delegate_to: localhost
+      check_mode: false
+ 
+    - name: Propagate prometheus_msteams template card
+      copy:
+        src: "/tmp/default-message-card.tmpl"
+        dest: "{{ prometheus_msteams_config_dir }}/default-message-card.tmpl"
+        mode: 0755
+        owner: root
+        group: root
+      when: not ansible_check_mode
+  when: prometheus_msteams_template_local_dir | length == 0
+  
+- name: propagate locally distributed prometheus_msteams template card
+  copy:
+    src: "{{ prometheus_msteams_template_local_dir }}/default-message-card.tmpl"
+    dest: "{{ prometheus_msteams_config_dir }}/default-message-card.tmpl"
+    mode: 0755
+    owner: root
+    group: root
+  when: prometheus_msteams_binary_local_dir | length > 0

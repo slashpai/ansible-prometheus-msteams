@@ -1,0 +1,52 @@
+---
+- name: Create the prometheus_msteams group
+  group:
+    name: "{{ _prometheus_msteams_system_group }}"
+    state: present
+    system: true
+  when: _prometheus_msteams_system_group != "root"
+
+- name: Create the prometheus_msteams user
+  user:
+    name: "{{ _prometheus_msteams_system_user }}"
+    groups: "{{ _prometheus_msteams_system_group }}"
+    append: true
+    shell: /usr/sbin/nologin
+    system: true
+    create_home: false
+    home: /
+  when: _prometheus_msteams_system_user != "root"
+
+- block:
+    - name: Download prometheus_msteams binary to local folder
+      become: false
+      get_url:
+        url: "https://github.com/prometheus-msteams/prometheus-msteams/releases/download/v{{ prometheus_msteams_version }}/prometheus-msteams-linux-amd64"
+        dest: "/tmp/prometheus-msteams-linux-amd64"
+        checksum: "sha256:{{ prometheus_msteams_checksum }}"
+        mode: '0644'
+      register: _download_binary
+      until: _download_binary is succeeded
+      retries: 5
+      delay: 2
+      delegate_to: localhost
+      check_mode: false
+
+    - name: Propagate prometheus_msteams binaries
+      copy:
+        src: "/tmp/prometheus-msteams-linux-amd64"
+        dest: "{{ _prometheus_msteams_binary_install_dir }}/prometheus_msteams"
+        mode: 0755
+        owner: root
+        group: root
+      when: not ansible_check_mode
+  when: prometheus_msteams_binary_local_dir | length == 0
+  
+- name: propagate locally distributed prometheus_msteams binary
+  copy:
+    src: "{{ prometheus_msteams_binary_local_dir }}/prometheus_msteams"
+    dest: "{{ _prometheus_msteams_binary_install_dir }}/prometheus_msteams"
+    mode: 0755
+    owner: root
+    group: root
+  when: prometheus_msteams_binary_local_dir | length > 0
