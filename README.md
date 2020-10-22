@@ -10,7 +10,7 @@ To install and configure [prometheus-msteams](https://github.com/prometheus-mste
 
 ## Synopsis
 
-This role was created to install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) when I figured out there is no direct way we can use [microsoft teams](https://www.microsoft.com/en-in/microsoft-365/microsoft-teams/group-chat-software) as receiver in [alertmanager config](https://prometheus.io/docs/alerting/latest/configuration/). I didn't find any existing ansible role for this thats how this role was created. This role is created and inspired by [ansible-node-exporter](https://github.com/cloudalchemy/ansible-node-exporter)
+This role was created to install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) when I figured out there is no direct way we can use [microsoft teams](https://www.microsoft.com/en-in/microsoft-365/microsoft-teams/group-chat-software) as receiver in [alertmanager config](https://prometheus.io/docs/alerting/latest/configuration/). I didn't find any existing ansible role for this thats how this role was created. This role is created and inspired from  [ansible-node-exporter](https://github.com/cloudalchemy/ansible-node-exporter)
 
 ## Requirements
 

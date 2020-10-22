@@ -7,7 +7,7 @@
 - import_tasks: configure.yml
   become: true
 
-- name: Ensure Node Exporter is enabled on boot
+- name: Ensure prometheus_msteams is enabled on boot
   become: true
   systemd:
     daemon_reload: true
