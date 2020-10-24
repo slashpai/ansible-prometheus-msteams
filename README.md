@@ -54,7 +54,7 @@ To get role updates
 git submodule update --remote
 ```
 
-Example [playbook](https://github.com/slashpai/msteams_ansible)
+Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/msteams_ansible)
 
 ## Contributing
 
