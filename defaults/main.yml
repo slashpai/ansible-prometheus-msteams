@@ -1,5 +1,5 @@
 ---
-prometheus_msteams_version: 1.4.1
+prometheus_msteams_version: latest
 
 prometheus_msteams_binary_local_dir: ""
 

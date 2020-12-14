@@ -22,7 +22,7 @@ All variables in [default/main.yml](defaults/main.yml) can be overrided
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-|`prometheus_msteams_version`| 1.4.1| prometheus-msteams version to install|
+|`prometheus_msteams_version`| latest| prometheus-msteams version to install|
 |`prometheus_msteams_binary_local_dir`| ""| To allow to use local packages from controller machine instead of github packages|
 |`prometheus_msteams_template_local_dir`| ""| To allow to use local teams card template on controller machine than from github|
 |`prometheus_msteams_config_dir`| "/etc/prometheus_msteams"| Location to store server configs |
