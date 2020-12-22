@@ -58,7 +58,11 @@ Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/mstea
 
 ## Contributing
 
-**TODO:** To be updated
+* Fork the project on GitHub
+* Clone the project
+* Add changes (and tests)
+* Commit and push
+* Create a merge-request
 
 ## License
 
