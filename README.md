@@ -34,24 +34,34 @@ All variables in [default/main.yml](defaults/main.yml) can be overrided
 
 Nil
 
-## Example Playbook
+## Usage
 
-This role is not released in galaxy yet to utilze this role, you can add this repo as a git submodule
+### From galaxy
+
+```python
+ansible-galaxy install slashpai.ansible_prometheus_msteams
+```
+
+### git submodule
+
+To add as submodule to your project instead of pulling from galaxy
 
 ```bash
 git submodule add -b main https://github.com/slashpai/ansible-prometheus-msteams.git roles/prometheus-msteams
-```
-
-```yaml
-- hosts: all
-  roles:
-    - prometheus-msteams
 ```
 
 To get role updates
 
 ```bash
 git submodule update --remote
+```
+
+## Example Playbook
+
+```yaml
+- hosts: all
+  roles:
+    - prometheus-msteams
 ```
 
 Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/msteams_ansible)
@@ -62,7 +72,11 @@ Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/mstea
 * Clone the project
 * Add changes (and tests)
 * Commit and push
-* Create a merge-request
+* Create a pull request
+
+## TODO
+
+* Writing tests (I am still learning it)
 
 ## License
 
