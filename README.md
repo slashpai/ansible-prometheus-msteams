@@ -61,10 +61,10 @@ git submodule update --remote
 ```yaml
 - hosts: all
   roles:
-    - prometheus-msteams
+    - slashpai.ansible_prometheus_msteams
 ```
 
-Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/msteams_ansible)
+Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/msteams_ansible) using git submodule
 
 ## Contributing
 
