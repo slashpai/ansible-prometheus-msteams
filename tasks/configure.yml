@@ -2,7 +2,7 @@
 - block:
     - name: Create prometheus_msteams config directory
       file:
-        path: "/etc/prometheus_msteams"
+        path: "{{ prometheus_msteams_config_dir }}"
         state: directory
         owner: root
         group: root

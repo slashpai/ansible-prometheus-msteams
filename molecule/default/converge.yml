@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-prometheus-msteams"
+      include_role:
+        name: "ansible-prometheus-msteams"
+      vars:
+        prometheus_msteams_channels:
+        - channel1: "https://outlook.office.com/webhook/xxx/aaa/abc"
+        - channel2: "https://outlook.office.com/webhook/xxx/bbb/def"

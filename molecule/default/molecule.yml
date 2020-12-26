@@ -1,0 +1,18 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: centos7
+    image: centos:7
+    command: /sbin/init
+    tmpfs:
+    - /run
+    - /tmp
+    volumes:
+    - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+verifier:
+  name: inspec
