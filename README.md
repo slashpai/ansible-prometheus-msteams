@@ -77,7 +77,7 @@ Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/mstea
 
 ## TODO
 
-- Update tests for ubuntu and figure out inspec version
+* Add tests for ubuntu and figure out which inspec version to use due to licencing difference
 
 ## License
 
