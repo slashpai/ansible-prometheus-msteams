@@ -74,10 +74,6 @@ Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/mstea
 * Commit and push
 * Create a pull request
 
-## TODO
-
-* Writing tests (I am still learning it)
-
 ## License
 
 [MIT](LICENSE)
