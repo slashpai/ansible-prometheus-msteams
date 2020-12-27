@@ -1,8 +1,11 @@
 # Ansible role prometheus-msteams
 
 [![ansible lint](https://github.com/slashpai/ansible-prometheus-msteams/workflows/ansible%20lint/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Aansible-lint)
-
 [![markdown links](https://github.com/slashpai/ansible-prometheus-msteams/workflows/md-links/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3AMD-links)
+[![molecule test](https://github.com/slashpai/ansible-prometheus-msteams/workflows/molecule-test/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Amolecule-test)
+[![Ansible Role](https://img.shields.io/badge/ansible%20role-slashpai.ansible_prometheus_msteams-purple.svg)](https://galaxy.ansible.com/slashpai/ansible_prometheus_msteams)
+[![GitHub tag](https://img.shields.io/github/v/tag/slashpai/ansible-prometheus-msteams.svg?sort=semver)](https://github.com/slashpai/ansible-prometheus-msteams/tags)
+
 
 ## ansible-prometheus-msteams
 
@@ -10,7 +13,7 @@ To install and configure [prometheus-msteams](https://github.com/prometheus-mste
 
 ## Synopsis
 
-This role was created to install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) when I figured out there is no direct way we can use [microsoft teams](https://www.microsoft.com/en-in/microsoft-365/microsoft-teams/group-chat-software) as receiver in [alertmanager config](https://prometheus.io/docs/alerting/latest/configuration/). I didn't find any existing ansible role for this thats how this role was created. This role is created and inspired from  [ansible-node-exporter](https://github.com/cloudalchemy/ansible-node-exporter)
+This role was created to install and configure [prometheus-msteams](https://github.com/prometheus-msteams/prometheus-msteams) when I figured out there is no direct way we can use [microsoft teams](https://www.microsoft.com/en-in/microsoft-365/microsoft-teams/group-chat-software) as receiver in [alertmanager config](https://prometheus.io/docs/alerting/latest/configuration/). I didn't find any existing ansible role for this thats how this role was created. This role is inspired from [ansible-node-exporter](https://github.com/cloudalchemy/ansible-node-exporter).
 
 ## Requirements
 
@@ -73,6 +76,10 @@ Example [playbook](https://github.com/slashpai/ansible_playbooks/tree/main/mstea
 * Add changes (and tests)
 * Commit and push
 * Create a pull request
+
+## TODO
+
+- Update tests for ubuntu and figure out inspec version
 
 ## License
 

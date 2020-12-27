@@ -1,4 +1,4 @@
-name: molecule
+name: molecule-test
 
 on: [push, pull_request]
 
@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: "${{ github.repository }}"
       - name: Install system dependencies
         run: |
           sudo apt-get update \
@@ -24,5 +22,8 @@ jobs:
           pip install --no-cache-dir molecule
           pip install --no-cache-dir molecule[docker,lint]
           pip install molecule-inspec
-      - name: Molecule verify
-        run: molecule verify
+      - name: Molecule test
+        run: |
+             pwd
+             ls
+             molecule --debug test
