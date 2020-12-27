@@ -1,6 +1,8 @@
-molecule==3.2.1
-molecule-docker==0.2.4
-molecule-inspec==1.0
-ansible==2.9.6
-ansible-lint==4.3.5
-docker==4.4.1
+molecule
+molecule-docker
+# since this version has bug for log message 
+# molecule-inspec==1.0
+git+git://github.com/ansible-community/molecule-inspec.git@master
+ansible
+ansible-lint
+docker

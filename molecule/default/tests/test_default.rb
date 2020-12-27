@@ -45,6 +45,12 @@ describe service('prometheus_msteams.service') do
   it { should be_running }
 end
 
+describe processes('prometheus_msteams') do
+  it { should exist }
+  its('users') { should eq ['prometheus_msteams'] }
+  its('commands') { should eq ['/usr/local/bin/prometheus_msteams -teams-request-uri alertmanager -config-file /etc/prometheus_msteams/config.yaml -template-file /etc/prometheus_msteams/default-message-card.tmpl'] }
+end
+
 describe command('curl http://localhost:2000') do
   its('stdout') { should include 'message":"Not Found"' }
   its('exit_status') { should eq 0 }

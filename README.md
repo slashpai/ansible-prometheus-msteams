@@ -1,11 +1,9 @@
 # Ansible role prometheus-msteams
 
-[![ansible lint](https://github.com/slashpai/ansible-prometheus-msteams/workflows/ansible%20lint/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Aansible-lint)
+[![build](https://github.com/slashpai/ansible-prometheus-msteams/workflows/build/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Abuild)
 [![markdown links](https://github.com/slashpai/ansible-prometheus-msteams/workflows/md-links/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3AMD-links)
-[![molecule test](https://github.com/slashpai/ansible-prometheus-msteams/workflows/molecule-test/badge.svg)](https://github.com/slashpai/ansible-prometheus-msteams/actions?query=workflow%3Amolecule-test)
 [![Ansible Role](https://img.shields.io/badge/ansible%20role-slashpai.ansible_prometheus_msteams-purple.svg)](https://galaxy.ansible.com/slashpai/ansible_prometheus_msteams)
 [![GitHub tag](https://img.shields.io/github/v/tag/slashpai/ansible-prometheus-msteams.svg?sort=semver)](https://github.com/slashpai/ansible-prometheus-msteams/tags)
-
 
 ## ansible-prometheus-msteams
 
