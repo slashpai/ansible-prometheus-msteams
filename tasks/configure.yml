@@ -48,7 +48,7 @@
     mode: 0755
     owner: root
     group: root
-  when: prometheus_msteams_binary_local_dir | length > 0
+  when: prometheus_msteams_template_local_dir | length > 0
 
 - name: Copy the prometheus_msteams systemd service file
   template:
