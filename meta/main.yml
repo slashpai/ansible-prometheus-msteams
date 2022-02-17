@@ -1,5 +1,6 @@
 galaxy_info:
-  author: Pai
+  author: slashpai
+  role_name: ansible_prometheus_msteams
   description: To install and configure prometheus-msteams for sending notifications from alertmanager to microsoft teams
   company: none
   license: MIT
@@ -17,6 +18,8 @@ galaxy_info:
     - monitoring
     - prometheus
     - alertmanager
+    - alerts
+    - alerting
     - notifications
     - msteams
 
